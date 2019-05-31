@@ -24,10 +24,13 @@ void poseCallback(const turtlesim::Pose::ConstPtr& msg)
     current_pose = *msg;
 }
 
+
 int main(int argc, char** argv)
 {
+    
     ros::init(argc, argv, "myturtle_control");
     ros::NodeHandle h;
+    ros::Time start=ros::Time::now();
     pub = h.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
     ros::Subscriber sub =
         h.subscribe("/turtle1/pose", 1000, poseCallback);
@@ -78,6 +81,10 @@ for(int i = 1; i < argc;  i += 2)
 
         x1=x0;
         y1=y0;
+
     }
+        ros::Time finish=ros::Time::now();
+	ROS_INFO("Thoi gian chay: %f",(finish-start).toSec());
+        
 return 0;
 }
