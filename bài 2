@@ -118,7 +118,7 @@ int main(int argc, char** argv)
 
     }
 ros::Time finish=ros::Time::now();
-	ROS_INFO("Thoi gian chay: %f",(finish-start).toSec());
+	ROS_INFO("Time: %f",(finish-start).toSec());
      
 
     return 0;
