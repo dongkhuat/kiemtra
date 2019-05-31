@@ -71,7 +71,7 @@ for(int i = 1; i < argc;  i += 2)
                 a = -1;
             }
             geometry_msgs::Twist msg = getMessage(
-                min(4*distance, 4.0)*a*4,
+                min(4*distance, 6.0)*a*4,
                a*16*dalpha);
             pub.publish(msg);
             
