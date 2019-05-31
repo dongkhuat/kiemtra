@@ -38,6 +38,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "myturtle_control");
     ros::NodeHandle h;
+    ros::Time start=ros::Time::now();
     ros::Publisher pub[10];
     PoseCallback sub[10];
 
@@ -116,5 +117,9 @@ int main(int argc, char** argv)
         y1 = y0;
 
     }
+ros::Time finish=ros::Time::now();
+	ROS_INFO("Thoi gian chay: %f",(finish-start).toSec());
+     
+
     return 0;
 }
