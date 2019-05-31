@@ -107,7 +107,7 @@ int main(int argc, char** argv)
                       double a;
                       if (agb < PI/2) {a = 1;}
                       else {a = -1;}
-                      geometry_msgs::Twist msg = getMessage(min(4*kc, 4.0)*a*4,a*16*dalpha);
+                      geometry_msgs::Twist msg = getMessage(min(4*kc, 6.0)*a*4,a*16*dalpha);
                       pub[idx].publish(msg);
                        }
                 }
